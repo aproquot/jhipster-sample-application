@@ -1,0 +1,73 @@
+{
+    "name": "AssistanceTechnique",
+    "fields": [
+        {
+            "fieldName": "description",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "dateReception",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "dateCloture",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "dateReponse",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "action",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "ao",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "codeProfil",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "tjm",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "dateDemarrage",
+            "fieldType": "LocalDate"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "statut",
+            "otherEntityRelationshipName": "assistanceTechnique",
+            "relationshipName": "statut",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "client",
+            "otherEntityRelationshipName": "assistanceTechnique",
+            "relationshipName": "client",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "utilisateur",
+            "otherEntityRelationshipName": "assistanceTechnique",
+            "relationshipName": "utilisateur",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20190812094117",
+    "entityTableName": "assistance_technique",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

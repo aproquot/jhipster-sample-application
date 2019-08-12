@@ -1,0 +1,46 @@
+{
+    "name": "Client",
+    "fields": [
+        {
+            "fieldName": "libelle",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "aer",
+            "otherEntityRelationshipName": "client",
+            "relationshipName": "aer"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "assistanceTechnique",
+            "otherEntityRelationshipName": "client",
+            "relationshipName": "assistanceTechnique"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "agence",
+            "otherEntityRelationshipName": "client",
+            "relationshipName": "agence",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "groupe",
+            "otherEntityRelationshipName": "client",
+            "relationshipName": "groupe",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20190812094114",
+    "entityTableName": "client",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

@@ -1,0 +1,76 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-rv-heading">Create or edit a Rv</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!editForm.get('id').value">
+                    <label for="id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id"
+                        readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_client">Client</label>
+                    <input type="text" class="form-control" name="client" id="field_client"
+                           formControlName="client"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_agence">Agence</label>
+                    <input type="text" class="form-control" name="agence" id="field_agence"
+                           formControlName="agence"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_objet">Objet</label>
+                    <input type="text" class="form-control" name="objet" id="field_objet"
+                           formControlName="objet"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_dateRv">Date Rv</label>
+                    <div class="input-group">
+                        <input id="field_dateRv" type="text" class="form-control" name="dateRv" ngbDatepicker  #dateRvDp="ngbDatepicker" formControlName="dateRv"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="dateRvDp.toggle()"><fa-icon [icon]="'calendar-alt'"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_description">Description</label>
+                    <input type="text" class="form-control" name="description" id="field_description"
+                           formControlName="description"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_dateCreation">Date Creation</label>
+                    <div class="input-group">
+                        <input id="field_dateCreation" type="text" class="form-control" name="dateCreation" ngbDatepicker  #dateCreationDp="ngbDatepicker" formControlName="dateCreation"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="dateCreationDp.toggle()"><fa-icon [icon]="'calendar-alt'"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_dateModification">Date Modification</label>
+                    <div class="input-group">
+                        <input id="field_dateModification" type="text" class="form-control" name="dateModification" ngbDatepicker  #dateModificationDp="ngbDatepicker" formControlName="dateModification"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="dateModificationDp.toggle()"><fa-icon [icon]="'calendar-alt'"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_commercial">Commercial</label>
+                    <input type="text" class="form-control" name="commercial" id="field_commercial"
+                           formControlName="commercial"/>
+                </div>
+
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span>Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span>Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

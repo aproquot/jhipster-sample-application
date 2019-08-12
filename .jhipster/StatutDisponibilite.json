@@ -1,0 +1,27 @@
+{
+    "name": "StatutDisponibilite",
+    "fields": [
+        {
+            "fieldName": "libelle",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "disponibilite",
+            "otherEntityRelationshipName": "statutDisponibilite",
+            "relationshipName": "disponibilite",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20190812094111",
+    "entityTableName": "statut_disponibilite",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

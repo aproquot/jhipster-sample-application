@@ -1,0 +1,55 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="rv">
+            <h2><span>Rv</span> {{rv.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span>Client</span></dt>
+                <dd>
+                    <span>{{rv.client}}</span>
+                </dd>
+                <dt><span>Agence</span></dt>
+                <dd>
+                    <span>{{rv.agence}}</span>
+                </dd>
+                <dt><span>Objet</span></dt>
+                <dd>
+                    <span>{{rv.objet}}</span>
+                </dd>
+                <dt><span>Date Rv</span></dt>
+                <dd>
+                    <span>{{rv.dateRv}}</span>
+                </dd>
+                <dt><span>Description</span></dt>
+                <dd>
+                    <span>{{rv.description}}</span>
+                </dd>
+                <dt><span>Date Creation</span></dt>
+                <dd>
+                    <span>{{rv.dateCreation}}</span>
+                </dd>
+                <dt><span>Date Modification</span></dt>
+                <dd>
+                    <span>{{rv.dateModification}}</span>
+                </dd>
+                <dt><span>Commercial</span></dt>
+                <dd>
+                    <span>{{rv.commercial}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/rv', rv.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

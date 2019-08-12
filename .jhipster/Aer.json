@@ -1,0 +1,72 @@
+{
+    "name": "Aer",
+    "fields": [
+        {
+            "fieldName": "description",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "dateReception",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "dateCloture",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "dateReponse",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "action",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "ao",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "montant",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "typeAer",
+            "otherEntityRelationshipName": "aer",
+            "relationshipName": "typeAer",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "statut",
+            "otherEntityRelationshipName": "aer",
+            "relationshipName": "statut",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "client",
+            "otherEntityRelationshipName": "aer",
+            "relationshipName": "client",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "utilisateur",
+            "otherEntityRelationshipName": "aer",
+            "relationshipName": "utilisateur",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20190812094115",
+    "entityTableName": "aer",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

@@ -1,0 +1,36 @@
+{
+    "name": "Statut",
+    "fields": [
+        {
+            "fieldName": "libelle",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "ordonnance",
+            "fieldType": "Integer"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "aer",
+            "otherEntityRelationshipName": "statut",
+            "relationshipName": "aer"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "assistanceTechnique",
+            "otherEntityRelationshipName": "statut",
+            "relationshipName": "assistanceTechnique"
+        }
+    ],
+    "changelogDate": "20190812094112",
+    "entityTableName": "statut",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

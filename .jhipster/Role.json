@@ -1,0 +1,26 @@
+{
+    "name": "Role",
+    "fields": [
+        {
+            "fieldName": "libelle",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "utilisateur",
+            "otherEntityRelationshipName": "role",
+            "relationshipName": "utilisateur"
+        }
+    ],
+    "changelogDate": "20190812094119",
+    "entityTableName": "role",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

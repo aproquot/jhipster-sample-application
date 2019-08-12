@@ -1,0 +1,99 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-aer-heading">Create or edit a Aer</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!editForm.get('id').value">
+                    <label for="id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id"
+                        readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_description">Description</label>
+                    <input type="text" class="form-control" name="description" id="field_description"
+                           formControlName="description"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_dateReception">Date Reception</label>
+                    <div class="input-group">
+                        <input id="field_dateReception" type="text" class="form-control" name="dateReception" ngbDatepicker  #dateReceptionDp="ngbDatepicker" formControlName="dateReception"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="dateReceptionDp.toggle()"><fa-icon [icon]="'calendar-alt'"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_dateCloture">Date Cloture</label>
+                    <div class="input-group">
+                        <input id="field_dateCloture" type="text" class="form-control" name="dateCloture" ngbDatepicker  #dateClotureDp="ngbDatepicker" formControlName="dateCloture"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="dateClotureDp.toggle()"><fa-icon [icon]="'calendar-alt'"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_dateReponse">Date Reponse</label>
+                    <div class="input-group">
+                        <input id="field_dateReponse" type="text" class="form-control" name="dateReponse" ngbDatepicker  #dateReponseDp="ngbDatepicker" formControlName="dateReponse"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="dateReponseDp.toggle()"><fa-icon [icon]="'calendar-alt'"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_action">Action</label>
+                    <input type="text" class="form-control" name="action" id="field_action"
+                           formControlName="action"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_ao">Ao</label>
+                    <input type="text" class="form-control" name="ao" id="field_ao"
+                           formControlName="ao"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_montant">Montant</label>
+                    <input type="text" class="form-control" name="montant" id="field_montant"
+                           formControlName="montant"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_typeAer">Type Aer</label>
+                    <select class="form-control" id="field_typeAer" name="typeAer" formControlName="typeAer">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="typeAerOption.id === editForm.get('typeAer').value?.id ? editForm.get('typeAer').value : typeAerOption" *ngFor="let typeAerOption of typeaers; trackBy: trackTypeAerById">{{typeAerOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_statut">Statut</label>
+                    <select class="form-control" id="field_statut" name="statut" formControlName="statut">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="statutOption.id === editForm.get('statut').value?.id ? editForm.get('statut').value : statutOption" *ngFor="let statutOption of statuts; trackBy: trackStatutById">{{statutOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_client">Client</label>
+                    <select class="form-control" id="field_client" name="client" formControlName="client">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="clientOption.id === editForm.get('client').value?.id ? editForm.get('client').value : clientOption" *ngFor="let clientOption of clients; trackBy: trackClientById">{{clientOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_utilisateur">Utilisateur</label>
+                    <select class="form-control" id="field_utilisateur" name="utilisateur" formControlName="utilisateur">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="utilisateurOption.id === editForm.get('utilisateur').value?.id ? editForm.get('utilisateur').value : utilisateurOption" *ngFor="let utilisateurOption of utilisateurs; trackBy: trackUtilisateurById">{{utilisateurOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span>Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span>Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
