@@ -1,0 +1,32 @@
+{
+    "name": "Agence",
+    "fields": [
+        {
+            "fieldName": "libelle",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "client",
+            "otherEntityRelationshipName": "agence",
+            "relationshipName": "client"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "disponibilite",
+            "otherEntityRelationshipName": "agence",
+            "relationshipName": "disponibilite"
+        }
+    ],
+    "changelogDate": "20190812094109",
+    "entityTableName": "agence",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

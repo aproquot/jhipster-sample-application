@@ -1,0 +1,77 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="assistanceTechnique">
+            <h2><span>Assistance Technique</span> {{assistanceTechnique.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span>Description</span></dt>
+                <dd>
+                    <span>{{assistanceTechnique.description}}</span>
+                </dd>
+                <dt><span>Date Reception</span></dt>
+                <dd>
+                    <span>{{assistanceTechnique.dateReception}}</span>
+                </dd>
+                <dt><span>Date Cloture</span></dt>
+                <dd>
+                    <span>{{assistanceTechnique.dateCloture}}</span>
+                </dd>
+                <dt><span>Date Reponse</span></dt>
+                <dd>
+                    <span>{{assistanceTechnique.dateReponse}}</span>
+                </dd>
+                <dt><span>Action</span></dt>
+                <dd>
+                    <span>{{assistanceTechnique.action}}</span>
+                </dd>
+                <dt><span>Ao</span></dt>
+                <dd>
+                    <span>{{assistanceTechnique.ao}}</span>
+                </dd>
+                <dt><span>Code Profil</span></dt>
+                <dd>
+                    <span>{{assistanceTechnique.codeProfil}}</span>
+                </dd>
+                <dt><span>Tjm</span></dt>
+                <dd>
+                    <span>{{assistanceTechnique.tjm}}</span>
+                </dd>
+                <dt><span>Date Demarrage</span></dt>
+                <dd>
+                    <span>{{assistanceTechnique.dateDemarrage}}</span>
+                </dd>
+                <dt><span>Statut</span></dt>
+                <dd>
+                    <div *ngIf="assistanceTechnique.statut">
+                        <a [routerLink]="['/statut', assistanceTechnique.statut?.id, 'view']">{{assistanceTechnique.statut?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span>Client</span></dt>
+                <dd>
+                    <div *ngIf="assistanceTechnique.client">
+                        <a [routerLink]="['/client', assistanceTechnique.client?.id, 'view']">{{assistanceTechnique.client?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span>Utilisateur</span></dt>
+                <dd>
+                    <div *ngIf="assistanceTechnique.utilisateur">
+                        <a [routerLink]="['/utilisateur', assistanceTechnique.utilisateur?.id, 'view']">{{assistanceTechnique.utilisateur?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/assistance-technique', assistanceTechnique.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

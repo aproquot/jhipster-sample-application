@@ -43,6 +43,30 @@ public class CacheConfiguration {
             createCache(cm, io.github.jhipster.application.domain.User.class.getName());
             createCache(cm, io.github.jhipster.application.domain.Authority.class.getName());
             createCache(cm, io.github.jhipster.application.domain.User.class.getName() + ".authorities");
+            createCache(cm, io.github.jhipster.application.domain.Agence.class.getName());
+            createCache(cm, io.github.jhipster.application.domain.Agence.class.getName() + ".clients");
+            createCache(cm, io.github.jhipster.application.domain.Agence.class.getName() + ".disponibilites");
+            createCache(cm, io.github.jhipster.application.domain.TypeAer.class.getName());
+            createCache(cm, io.github.jhipster.application.domain.TypeAer.class.getName() + ".aers");
+            createCache(cm, io.github.jhipster.application.domain.StatutDisponibilite.class.getName());
+            createCache(cm, io.github.jhipster.application.domain.Statut.class.getName());
+            createCache(cm, io.github.jhipster.application.domain.Statut.class.getName() + ".aers");
+            createCache(cm, io.github.jhipster.application.domain.Statut.class.getName() + ".assistanceTechniques");
+            createCache(cm, io.github.jhipster.application.domain.Groupe.class.getName());
+            createCache(cm, io.github.jhipster.application.domain.Groupe.class.getName() + ".clients");
+            createCache(cm, io.github.jhipster.application.domain.Client.class.getName());
+            createCache(cm, io.github.jhipster.application.domain.Client.class.getName() + ".aers");
+            createCache(cm, io.github.jhipster.application.domain.Client.class.getName() + ".assistanceTechniques");
+            createCache(cm, io.github.jhipster.application.domain.Aer.class.getName());
+            createCache(cm, io.github.jhipster.application.domain.Disponibilite.class.getName());
+            createCache(cm, io.github.jhipster.application.domain.AssistanceTechnique.class.getName());
+            createCache(cm, io.github.jhipster.application.domain.Utilisateur.class.getName());
+            createCache(cm, io.github.jhipster.application.domain.Utilisateur.class.getName() + ".aers");
+            createCache(cm, io.github.jhipster.application.domain.Utilisateur.class.getName() + ".assistanceTechniques");
+            createCache(cm, io.github.jhipster.application.domain.Role.class.getName());
+            createCache(cm, io.github.jhipster.application.domain.Role.class.getName() + ".utilisateurs");
+            createCache(cm, io.github.jhipster.application.domain.FormatDate.class.getName());
+            createCache(cm, io.github.jhipster.application.domain.Rv.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }

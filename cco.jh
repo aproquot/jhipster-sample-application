@@ -1,0 +1,91 @@
+// JDL definition for application 'CCO' generated with command 'jhipster export-jdl'
+
+entity Agence {
+  libelle String
+}
+entity TypeAer {
+  libelle String
+}
+entity StatutDisponibilite {
+  libelle String
+}
+entity Statut {
+  libelle String,
+  ordonnance Integer
+}
+entity Groupe {
+  libelle String
+}
+entity Client {
+  libelle String
+}
+entity Aer {
+  description String,
+  dateReception LocalDate,
+  dateCloture LocalDate,
+  dateReponse LocalDate,
+  action String,
+  ao String,
+  montant String
+}
+entity Disponibilite {
+  nom String,
+  prenom String,
+  date LocalDate,
+  competence String,
+  logement String,
+  occupation String,
+  affaireEnVue String,
+  icDomicile Boolean
+}
+entity AssistanceTechnique {
+  description String,
+  dateReception LocalDate,
+  dateCloture LocalDate,
+  dateReponse LocalDate,
+  action String,
+  ao String,
+  codeProfil String,
+  tjm String,
+  dateDemarrage LocalDate
+}
+entity Utilisateur {
+  login String
+}
+entity Role {
+  libelle String
+}
+entity FormatDate {
+  libelle String,
+  format String
+}
+entity Rv {
+  client String,
+  agence String,
+  objet String,
+  dateRv LocalDate,
+  description String,
+  dateCreation LocalDate,
+  dateModification LocalDate,
+  commercial String
+}
+relationship OneToMany {
+  Agence{client} to Client{agence},
+  Groupe{client} to Client{groupe},
+  TypeAer{aer} to Aer{typeAer},
+  Statut{aer} to Aer{statut},
+  Client{aer} to Aer{client},
+  Utilisateur{aer} to Aer{utilisateur},
+  Agence{disponibilite} to Disponibilite{agence},
+  Statut{assistanceTechnique} to AssistanceTechnique{statut},
+  Client{assistanceTechnique} to AssistanceTechnique{client},
+  Utilisateur{assistanceTechnique} to AssistanceTechnique{utilisateur},
+  Role{utilisateur} to Utilisateur{role}
+}
+relationship ManyToOne {
+  StatutDisponibilite{disponibilite} to Disponibilite
+}
+
+service FormatDate with serviceImpl
+service Rv with serviceClass
+paginate Rv with pagination

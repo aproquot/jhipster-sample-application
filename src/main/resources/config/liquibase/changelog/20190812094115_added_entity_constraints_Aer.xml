@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+    <!--
+        Added the constraints for entity Aer.
+    -->
+    <changeSet id="20190812094115-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="type_aer_id"
+                                 baseTableName="aer"
+                                 constraintName="fk_aer_type_aer_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="type_aer"/>
+
+        <addForeignKeyConstraint baseColumnNames="statut_id"
+                                 baseTableName="aer"
+                                 constraintName="fk_aer_statut_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="statut"/>
+
+        <addForeignKeyConstraint baseColumnNames="client_id"
+                                 baseTableName="aer"
+                                 constraintName="fk_aer_client_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="client"/>
+
+        <addForeignKeyConstraint baseColumnNames="utilisateur_id"
+                                 baseTableName="aer"
+                                 constraintName="fk_aer_utilisateur_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="utilisateur"/>
+
+    </changeSet>
+</databaseChangeLog>

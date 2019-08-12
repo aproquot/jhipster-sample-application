@@ -1,0 +1,63 @@
+<div>
+    <h2 id="page-heading">
+        <span>Statut Disponibilites</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-statut-disponibilite" [routerLink]="['/statut-disponibilite/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span >
+            Create a new Statut Disponibilite
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="alert alert-warning" *ngIf="statutDisponibilites?.length === 0">
+        <span>No statutDisponibilites found</span>
+    </div>
+    <div class="table-responsive" *ngIf="statutDisponibilites?.length > 0">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span>ID</span></th>
+            <th><span>Libelle</span></th>
+            <th><span>Disponibilite</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let statutDisponibilite of statutDisponibilites ;trackBy: trackId">
+                <td><a [routerLink]="['/statut-disponibilite', statutDisponibilite.id, 'view' ]">{{statutDisponibilite.id}}</a></td>
+                <td>{{statutDisponibilite.libelle}}</td>
+                <td>
+                    <div *ngIf="statutDisponibilite.disponibilite">
+                        <a [routerLink]="['/disponibilite', statutDisponibilite.disponibilite?.id, 'view' ]" >{{statutDisponibilite.disponibilite?.id}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/statut-disponibilite', statutDisponibilite.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/statut-disponibilite', statutDisponibilite.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/statut-disponibilite', { outlets: { popup: statutDisponibilite.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

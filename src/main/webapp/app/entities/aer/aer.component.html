@@ -1,0 +1,93 @@
+<div>
+    <h2 id="page-heading">
+        <span>Aers</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-aer" [routerLink]="['/aer/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span >
+            Create a new Aer
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="alert alert-warning" *ngIf="aers?.length === 0">
+        <span>No aers found</span>
+    </div>
+    <div class="table-responsive" *ngIf="aers?.length > 0">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span>ID</span></th>
+            <th><span>Description</span></th>
+            <th><span>Date Reception</span></th>
+            <th><span>Date Cloture</span></th>
+            <th><span>Date Reponse</span></th>
+            <th><span>Action</span></th>
+            <th><span>Ao</span></th>
+            <th><span>Montant</span></th>
+            <th><span>Type Aer</span></th>
+            <th><span>Statut</span></th>
+            <th><span>Client</span></th>
+            <th><span>Utilisateur</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let aer of aers ;trackBy: trackId">
+                <td><a [routerLink]="['/aer', aer.id, 'view' ]">{{aer.id}}</a></td>
+                <td>{{aer.description}}</td>
+                <td>{{aer.dateReception | date:'mediumDate'}}</td>
+                <td>{{aer.dateCloture | date:'mediumDate'}}</td>
+                <td>{{aer.dateReponse | date:'mediumDate'}}</td>
+                <td>{{aer.action}}</td>
+                <td>{{aer.ao}}</td>
+                <td>{{aer.montant}}</td>
+                <td>
+                    <div *ngIf="aer.typeAer">
+                        <a [routerLink]="['/type-aer', aer.typeAer?.id, 'view' ]" >{{aer.typeAer?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="aer.statut">
+                        <a [routerLink]="['/statut', aer.statut?.id, 'view' ]" >{{aer.statut?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="aer.client">
+                        <a [routerLink]="['/client', aer.client?.id, 'view' ]" >{{aer.client?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="aer.utilisateur">
+                        <a [routerLink]="['/utilisateur', aer.utilisateur?.id, 'view' ]" >{{aer.utilisateur?.id}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/aer', aer.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/aer', aer.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/aer', { outlets: { popup: aer.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

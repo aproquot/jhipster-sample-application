@@ -1,0 +1,75 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="aer">
+            <h2><span>Aer</span> {{aer.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span>Description</span></dt>
+                <dd>
+                    <span>{{aer.description}}</span>
+                </dd>
+                <dt><span>Date Reception</span></dt>
+                <dd>
+                    <span>{{aer.dateReception}}</span>
+                </dd>
+                <dt><span>Date Cloture</span></dt>
+                <dd>
+                    <span>{{aer.dateCloture}}</span>
+                </dd>
+                <dt><span>Date Reponse</span></dt>
+                <dd>
+                    <span>{{aer.dateReponse}}</span>
+                </dd>
+                <dt><span>Action</span></dt>
+                <dd>
+                    <span>{{aer.action}}</span>
+                </dd>
+                <dt><span>Ao</span></dt>
+                <dd>
+                    <span>{{aer.ao}}</span>
+                </dd>
+                <dt><span>Montant</span></dt>
+                <dd>
+                    <span>{{aer.montant}}</span>
+                </dd>
+                <dt><span>Type Aer</span></dt>
+                <dd>
+                    <div *ngIf="aer.typeAer">
+                        <a [routerLink]="['/type-aer', aer.typeAer?.id, 'view']">{{aer.typeAer?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span>Statut</span></dt>
+                <dd>
+                    <div *ngIf="aer.statut">
+                        <a [routerLink]="['/statut', aer.statut?.id, 'view']">{{aer.statut?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span>Client</span></dt>
+                <dd>
+                    <div *ngIf="aer.client">
+                        <a [routerLink]="['/client', aer.client?.id, 'view']">{{aer.client?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span>Utilisateur</span></dt>
+                <dd>
+                    <div *ngIf="aer.utilisateur">
+                        <a [routerLink]="['/utilisateur', aer.utilisateur?.id, 'view']">{{aer.utilisateur?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/aer', aer.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

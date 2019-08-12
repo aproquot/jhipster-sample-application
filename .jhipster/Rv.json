@@ -1,0 +1,47 @@
+{
+    "name": "Rv",
+    "fields": [
+        {
+            "fieldName": "client",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "agence",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "objet",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "dateRv",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "description",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "dateCreation",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "dateModification",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "commercial",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20190812094121",
+    "entityTableName": "rv",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "serviceClass",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

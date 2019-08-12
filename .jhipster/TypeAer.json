@@ -1,0 +1,26 @@
+{
+    "name": "TypeAer",
+    "fields": [
+        {
+            "fieldName": "libelle",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "aer",
+            "otherEntityRelationshipName": "typeAer",
+            "relationshipName": "aer"
+        }
+    ],
+    "changelogDate": "20190812094110",
+    "entityTableName": "type_aer",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

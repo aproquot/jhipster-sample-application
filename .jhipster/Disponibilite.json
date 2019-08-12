@@ -1,0 +1,55 @@
+{
+    "name": "Disponibilite",
+    "fields": [
+        {
+            "fieldName": "nom",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "prenom",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "date",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "competence",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "logement",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "occupation",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "affaireEnVue",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "icDomicile",
+            "fieldType": "Boolean"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "agence",
+            "otherEntityRelationshipName": "disponibilite",
+            "relationshipName": "agence",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20190812094116",
+    "entityTableName": "disponibilite",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

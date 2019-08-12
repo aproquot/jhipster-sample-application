@@ -1,0 +1,39 @@
+{
+    "name": "Utilisateur",
+    "fields": [
+        {
+            "fieldName": "login",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "aer",
+            "otherEntityRelationshipName": "utilisateur",
+            "relationshipName": "aer"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "assistanceTechnique",
+            "otherEntityRelationshipName": "utilisateur",
+            "relationshipName": "assistanceTechnique"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "role",
+            "otherEntityRelationshipName": "utilisateur",
+            "relationshipName": "role",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20190812094118",
+    "entityTableName": "utilisateur",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}
